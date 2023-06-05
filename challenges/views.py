@@ -64,7 +64,7 @@ def monthly_challenge(request, month):
                 "text": challenge_text,
             },
         )
-    except KeyError:
+    except:
         # raise Http404()
         response_data = render_to_string("404.html")
-        return Http404(response_data)
+        return HttpResponseNotFound(response_data)
